@@ -1,0 +1,59 @@
+class Animal(object): 
+    'a class that abstracts an animal'
+    def __init__(self, s = 'default', l = 'default', a=0):
+        self.species = s
+        self.language = l
+        if a>99:
+            a=99
+        self.age=a
+    def setSpecies(self, name):
+        'sets the species of the animal'
+        self.species = name
+        
+    def setLanguage(self, lang):
+        'sets the language of the animal'
+        self.language = lang
+
+    def setAge(self, a):
+        'sets the age of the animal'
+        if a<0:
+            a=0
+        elif a>99:
+            a=99
+        self.age=age
+    def getAge():
+        'returns the age of the animal'
+        return age
+    def speak(self):
+        return 'I am a {} years old {} and I {}'.format(self.age,self.species, self.language)
+    
+    def __repr__(self):
+        return 'Animal({}, {} ,{})'.format(self.species, self.language,self.age)
+
+    def __str__(self):
+        return self.speak()
+
+    def __add__(self, other):
+        'create a hybrid animal'
+        return Animal(self.species+"/"+other.species, self.language+"/"+other.language)
+
+def processAnimals(fileName):
+    try:
+        infile=open(fileName,'r')
+        contents=infile.readlines()
+        infile.close()
+    except:
+        print('An error occured trying to open that file')
+        return
+    lst=[]
+    for line in contents:
+        splitline=line.split(',')
+        lst.append(splitline)
+        int(splitline[2])
+    return(lst)
+    if len(line)<0:
+        return []
+
+    pass
+   
+        

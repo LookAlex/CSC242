@@ -1,0 +1,35 @@
+class Stat(object):
+    def __init__(self,lst=[]):
+        self.lst=lst
+    def sum(self):
+        if self.lst==[]:
+            return 0
+        return sum(self.lst)
+    def max(self):
+        if self.lst==[]:
+            return 0
+        return max(self.lst)
+    def min(self):
+        if self.lst==[]:
+            return 0
+        return min(self.lst)
+    def add(self,newnum):
+        try:
+            newnum=float(newnum)
+            self.lst.append(newnum)
+            return (self.lst)
+        except:
+            return('Not a number')
+    def clear(self):
+        return ([])
+    def mean(self):
+        if self.lst==[]:
+            return 0.0
+        self.lst=sum(self.lst)/len(self.lst)
+        return (self.lst)
+    def __str__(self):
+        return ('Stat object with {} item(s)').format(len(self.lst))
+    def __eq__(self, other):
+        return self.sum()==other.sum()
+    def __repr__(self):
+        return ('Stat({})').format(self.lst)
